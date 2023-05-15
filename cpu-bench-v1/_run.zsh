@@ -18,7 +18,7 @@ run_benchmark() {
 funcs=( integer-arithemetic float-arithmetic memory-access matrix-multiply parallel-float parallel-sin basic-instructions random-access )
 
 gpp=g++
-gpp_args=( -std=c++17 -O3 )
+gpp_args=( -std=c++17 -O3 -lpthread )
 
 runtimes=()
 outputs=()
