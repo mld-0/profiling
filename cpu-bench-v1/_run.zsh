@@ -18,7 +18,7 @@ run_benchmark() {
 funcs=( integer-arithemetic float-arithmetic memory-access matrix-multiply parallel-float parallel-sin basic-instructions random-access )
 
 gpp=g++
-gpp_args=( -std=c++17 -O3 -lpthread )
+gpp_args=( -std=c++17 -O3 )
 
 runtimes=()
 outputs=()
@@ -30,7 +30,7 @@ main()
 	echo "build: $gpp ${gpp_args[@]}"
 	startTime=$( microtime )
 	for func in "${funcs[@]}"; do
-		$gpp ${gpp_args[@]} -o "$func" "$func.cpp"
+		$gpp ${gpp_args[@]} -o "$func" "$func.cpp" -lpthread
 	done
 	endTime=$( microtime )
 	elapsedTime=$( perl -E "say $endTime - $startTime" )
