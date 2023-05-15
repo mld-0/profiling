@@ -1,0 +1,1 @@
+2023-05-15T22:07:13AEST cpu-bench-v1; (single threaded) 'sin()' test
